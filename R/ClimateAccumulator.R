@@ -48,6 +48,7 @@ climate.accumulator <- function(CTSR.VI, clim.data, max.acp, max.osp, temperatur
   m.en <- end(CTSR.VI)[2]
   clim.yend <- end(clim.data)[1]
   clim.mend <-  end(clim.data)[2]
+
   # +++++ Check to make sure they have no issues +++++
   if ((y.en != clim.yend) || clim.mend != m.en) {
     stop("clim.data does not end at the same time as CTSR.VI")}

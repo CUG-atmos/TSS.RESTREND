@@ -83,7 +83,7 @@ TSSRattribution <- function(
     return(ret.fail(overview, models, "NANinCTSR.TM", SkipError))
   }
   # ===== sink to catch bfast text =====
-  sink(tempfile(), type = c("output"))
+  # sink(tempfile(), type = c("output"))
   allerror <- try({
 
     # ========== Get the annual Max VI values ==========
@@ -167,9 +167,6 @@ TSSRattribution <- function(
           stop("Unknown dim error")
         }
         VCRmod <- results$TSSRmodels$VPR.fit
-
-        # browser()
-
       }else{
         # ========== Breakpoint the the VCR ==========
         # +++++ get the longer annual values +++++
@@ -268,9 +265,8 @@ TSSRattribution <- function(
     return(structure(list(summary = overview, models = models, errors = "")))
   })
 
-  sink()
+  # sink()
   # ========== Handle any exceptions ==========
-
   if (class(ret.fail) == "try-error"){
     print("deal with all error here ")
     return(ret.fail(overview, models, "AttributionFailed", SkipError, errormessage=ret.fail))
